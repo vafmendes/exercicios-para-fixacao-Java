@@ -1,9 +1,10 @@
 package edu.vinicius.filas;
 
-public class No {
+/*Utilizando generics*/
+public class No<T> {
 	
-	private Object object;
-	private No refNo;
+	private T object;
+	private No<T> refNo;
 	
 	
 	public No() {
@@ -11,7 +12,7 @@ public class No {
 	}
 	
 	
-	public No(Object object) {
+	public No(T object) {
 		super();
 		this.object = object;
 		this.refNo = null;
@@ -23,7 +24,7 @@ public class No {
 	}
 
 
-	public void setObject(Object object) {
+	public void setObject(T object) {
 		this.object = object;
 	}
 
