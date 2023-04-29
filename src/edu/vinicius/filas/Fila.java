@@ -1,20 +1,21 @@
 package edu.vinicius.filas;
 
-public class Fila {
+public class Fila <T> {
 	
-	private No refEntradaFila;
+	private No <T> refEntradaFila;
 
 	public Fila() {
 		this.refEntradaFila = null;
 	}
 	
-	public void enqueue(No novoNo) {
+	public void enqueue(T object) {
+		No novoNo = new No(object);
 		novoNo.setRefNo(refEntradaFila);
 		refEntradaFila = novoNo;
 		
 	}
 	
-	public No first() {
+	public T first() {
 		if(!this.isEmpty()) {
 			No primeiroNo = refEntradaFila;
 			
@@ -25,12 +26,12 @@ public class Fila {
 					break;
 				}
 			}
-			return primeiroNo;
+			return (T) primeiroNo.getObject();
 		}
 		return null;
 	}
 	
-	public No dequeue() {
+	public T dequeue() {
 		if(!this.isEmpty()) {
 			No primeiroNo = refEntradaFila;
 			No noAuxiliar = refEntradaFila;
@@ -43,7 +44,7 @@ public class Fila {
 					break;
 				}
 			}
-			return primeiroNo;
+			return (T) primeiroNo.getObject();
 		}
 		return null;
 	}

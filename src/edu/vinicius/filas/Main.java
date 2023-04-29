@@ -3,13 +3,13 @@ package edu.vinicius.filas;
 public class Main {
 
 	public static void main(String[] args) {
-		Fila primeiraFila = new Fila();
+		Fila<String> primeiraFila = new Fila<>();
 		
 		/*Ultilizando o método enqueue para atribuir os dados na fila*/
-		primeiraFila.enqueue(new No("primeiro"));
-		primeiraFila.enqueue(new No("segundo"));
-		primeiraFila.enqueue(new No("terceiro"));
-		primeiraFila.enqueue(new No("quarto"));
+		primeiraFila.enqueue("primeiro");
+		primeiraFila.enqueue("segundo");
+		primeiraFila.enqueue("terceiro");
+		primeiraFila.enqueue("quarto");
 		
 		
 		System.out.println(primeiraFila);
@@ -19,7 +19,7 @@ public class Main {
 		System.out.println(primeiraFila);
 		
 		/*Atribuindo o ultimo na fila*/
-		primeiraFila.enqueue(new No("último"));
+		primeiraFila.enqueue("último");
 		
 		System.out.println(primeiraFila);
 		
